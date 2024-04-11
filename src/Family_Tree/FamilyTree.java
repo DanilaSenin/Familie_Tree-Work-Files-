@@ -1,7 +1,5 @@
 package Family_Tree;
 
-import ru.gb.vending_machine.products.Product;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +12,7 @@ public class FamilyTree {
             listOfPeople = new ArrayList<>();
         }
 
-        public void addProduct(Human human){
+        public void addPerson(Human human){
             listOfPeople.add(human);
         }
 

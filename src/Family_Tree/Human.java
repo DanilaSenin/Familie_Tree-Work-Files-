@@ -4,42 +4,55 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Human {
-    private String name;
+    private String name, gender;
     private LocalDate birthDate, deathDate;
     private List<Human> children;
-    private Gender gender;
     private Human mather, father;
+    private Integer Age;
 
-    public Human(String name, LocalDate birthDate, Gender gender, Human mather, Human father) {
+    public Human(String name, LocalDate birthDate, String gender) {
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
         this.mather = mather;
         this.father = father;
+        }
+    public Human(String name, LocalDate birthDate, LocalDate deathDate, String gender) {
+        this(name, birthDate, gender);
+        this.deathDate = deathDate;
     }
 
-    public int getId() {
-        return id;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public LocalDate getDeathDate() {
+        return deathDate;
+    }
+
+    public void setDeathDate(LocalDate deathDate) {
+        this.deathDate = deathDate;
     }
 
     public String getName() {
         return name;
     }
 
-    public double getPrice() {
-        return price;
+    public String getGender() {
+        return gender;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void SjetAge() {
+        if (this.deathDate != null) {
+            this.Age = LocalDate.now().getYear() - this.birthDate.getYear();
+        }
+        else {
+            this.Age = this.deathDate.getYear() - this.birthDate.getYear();
+        }
     }
 
     @Override
     public String toString() {
-        return "id: " + id + ", name: " + name + ", price: " + price + "р.";
+        return "Name: " + name + "\n" + "Gender: " + gender + " \n Date of Birth: " + birthDate  + "\n" + " Date of Death: " + deathDate + "\n" +"\n" + "Age: " + Age;
     }
 }
