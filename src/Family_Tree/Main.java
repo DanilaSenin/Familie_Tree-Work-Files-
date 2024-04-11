@@ -35,6 +35,7 @@ public class Main {
         Family.addPerson(human2);
         Family.addPerson(human3);
         Family.addPerson(human4);
-        System.out.println(Family.getPersonInfo());
+       // System.out.println(Family.getPersonInfo());
+        System.out.println(Family.getCntPerson());
     }
 }

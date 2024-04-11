@@ -18,12 +18,16 @@ public class FamilyTree {
 
         public String getPersonInfo(){
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("Члены семьи:\n");
+            stringBuilder.append("Family:" + this.name + "\n");
             for (Human human: listOfPeople){
                 stringBuilder.append(human);
                 stringBuilder.append("\n");
             }
             return stringBuilder.toString();
+        }
+
+        public Integer getCntPerson() {
+            return listOfPeople.size();
         }
 
 }
