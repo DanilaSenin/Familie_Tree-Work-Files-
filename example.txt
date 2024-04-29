@@ -1,0 +1,69 @@
+Family:Svers
+
+ Name: Jon
+Gender: Man 
+ Date of Birth: 1905-11-15
+ Date of Death: null
+Age: 118
+Mother: null
+Father: null
+
+
+ Name: Jane
+Gender: Woman 
+ Date of Birth: 1904-12-11
+ Date of Death: 2022-12-13
+Age: 119
+Mother: null
+Father: null
+
+
+ Name: Uil
+Gender: Man 
+ Date of Birth: 1953-08-17
+ Date of Death: null
+Age: 70
+Mother: 
+ Name: Jane
+Gender: Woman 
+ Date of Birth: 1904-12-11
+ Date of Death: 2022-12-13
+Age: 119
+Mother: null
+Father: null
+
+Father: 
+ Name: Jon
+Gender: Man 
+ Date of Birth: 1905-11-15
+ Date of Death: null
+Age: 118
+Mother: null
+Father: null
+
+
+
+ Name: Janin
+Gender: Woman 
+ Date of Birth: 1955-05-21
+ Date of Death: null
+Age: 68
+Mother: 
+ Name: Jane
+Gender: Woman 
+ Date of Birth: 1904-12-11
+ Date of Death: 2022-12-13
+Age: 119
+Mother: null
+Father: null
+
+Father: 
+ Name: Jon
+Gender: Man 
+ Date of Birth: 1905-11-15
+ Date of Death: null
+Age: 118
+Mother: null
+Father: null
+
+
