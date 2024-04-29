@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Human {
-    private String name, gender;
+    private String name;
+    private Gender gender;
     private LocalDate birthDate, deathDate;
     private List<Human> children = new ArrayList<>();
     private Human mather, father;
@@ -15,13 +16,13 @@ public class Human {
     public Human(){
         this.name = "No data available";
     }
-    public Human(String name, LocalDate birthDate, String gender) {
+    public Human(String name, LocalDate birthDate, Gender gender) {
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
         this.age = birthDate.until(LocalDate.now());
         }
-    public Human(String name, LocalDate birthDate, LocalDate deathDate, String gender) {
+    public Human(String name, LocalDate birthDate, LocalDate deathDate, Gender gender) {
         this(name, birthDate, gender);
         this.deathDate = deathDate;
         this.age = birthDate.until(deathDate);
@@ -43,7 +44,7 @@ public class Human {
         return name;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 

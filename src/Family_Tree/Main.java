@@ -8,13 +8,13 @@ public class Main {
         FamilyTree Family = new FamilyTree("Svers");
 
         //Родители семьи
-        Human human1 = new Human("Jon", LocalDate.of(1905, 11, 15), "Man");
-        Human human2 = new Human("Jane", LocalDate.of(1904, 12, 11), LocalDate.of(2022, 12,13), "Woman");
+        Human human1 = new Human("Jon", LocalDate.of(1905, 11, 15), Gender.Man);
+        Human human2 = new Human("Jane", LocalDate.of(1904, 12, 11), LocalDate.of(2022, 12,13), Gender.Woman);
 
         // Дети
         //Заносим детей в книгу
-        Human human3 = new Human("Uil", LocalDate.of(1953, 8, 17), "Man");
-        Human human4 = new Human("Janin", LocalDate.of(1955, 5, 21), "Woman");
+        Human human3 = new Human("Uil", LocalDate.of(1953, 8, 17), Gender.Man);
+        Human human4 = new Human("Janin", LocalDate.of(1955, 5, 21), Gender.Woman);
         //Отмечаем родителей каждого ребёнка
 
         human3.setFather(human1);
@@ -35,7 +35,7 @@ public class Main {
         Family.addPerson(human2);
         Family.addPerson(human3);
         Family.addPerson(human4);
-       // System.out.println(Family.getPersonInfo());
-        System.out.println(Family.getCntPerson());
+       System.out.println(Family.getPersonInfo());
+        //System.out.println(Family.getCntPerson());
     }
 }
