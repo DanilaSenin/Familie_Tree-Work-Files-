@@ -31,17 +31,7 @@ public class Main {
                 }
             }
         }
-        //System.out.println(humans);
 
-        //Родители семьи
-        /*Human human1 = new Human("Jon", LocalDate.of(1905, 11, 15), Gender.Man);
-        Human human2 = new Human("Jane", LocalDate.of(1904, 12, 11), LocalDate.of(2022, 12,13), Gender.Woman);
-
-        // Дети
-        //Заносим детей в книгу
-        Human human3 = new Human("Uil", LocalDate.of(1953, 8, 17), Gender.Man);
-        Human human4 = new Human("Janin", LocalDate.of(1955, 5, 21), Gender.Woman);*/
-        //Отмечаем родителей каждого ребёнка
 
         humans.get(2).setFather(humans.get(0));
         humans.get(2).setMather(humans.get(1));
@@ -67,10 +57,5 @@ public class Main {
 
         String content = Family.getPersonInfo();
         fileManager.writeToFile(fileNameLibrary, content);
-
-        //String readContent = fileManager.readFromFile(fileNameArchive);
-        //System.out.println("Содержимое файла: " + readContent);
-     //System.out.println(Family.getPersonInfo());
-        //System.out.println(Family.getCntPerson());
     }
 }
