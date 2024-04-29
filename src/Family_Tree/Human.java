@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class Human {
     private String name;
@@ -11,7 +12,6 @@ public class Human {
     private LocalDate birthDate, deathDate;
     private List<Human> children = new ArrayList<>();
     private Human mather, father;
-    private Period age;
 
     public Human(){
         this.name = "No data available";
@@ -20,12 +20,16 @@ public class Human {
         this.name = name;
         this.birthDate = birthDate;
         this.gender = gender;
-        this.age = birthDate.until(LocalDate.now());
+
         }
     public Human(String name, LocalDate birthDate, LocalDate deathDate, Gender gender) {
         this(name, birthDate, gender);
         this.deathDate = deathDate;
-        this.age = birthDate.until(deathDate);
+    }
+
+    public static int calculateAge(LocalDate birthDate) {
+        LocalDate currentDate = LocalDate.now();
+        return Period.between(birthDate, currentDate).getYears();
     }
 
     public LocalDate getBirthDate() {
@@ -70,6 +74,6 @@ public class Human {
 
     @Override
     public String toString() {
-        return "\n Name: " + name + "\n" + "Gender: " + gender + " \n Date of Birth: " + birthDate  + "\n" + " Date of Death: " + deathDate + "\n"  + "Age: " + age.getYears() +"\n" + "Mother: " + mather +"\n" + "Father: " + father +"\n";
+        return "\n Name: " + name + "\n" + "Gender: " + gender + " \n Date of Birth: " + birthDate  + "\n" + " Date of Death: " + deathDate + "\n"  + "Age: " + calculateAge(birthDate) +"\n" + "Mother: " + mather +"\n" + "Father: " + father +"\n";
     }
 }
