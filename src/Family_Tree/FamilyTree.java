@@ -3,23 +3,23 @@ package Family_Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FamilyTree {
+public class FamilyTree <E extends Alive> {
     private String name;
-    private List<Human> listOfPeople;
+    private List<E> listOfCreatur;
 
         public FamilyTree(String name) {
             this.name = name;
-            listOfPeople = new ArrayList<>();
+            listOfCreatur = new ArrayList<>();
         }
 
-        public void addPerson(Human human){
-            listOfPeople.add(human);
+        public void addPerson(E human){
+            listOfCreatur.add(human);
         }
 
         public String getPersonInfo(){
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append("Family:" + this.name + "\n");
-            for (Human human: listOfPeople){
+            for (E human: listOfCreatur){
                 stringBuilder.append(human);
                 stringBuilder.append("\n");
             }
@@ -27,7 +27,7 @@ public class FamilyTree {
         }
 
         public Integer getCntPerson() {
-            return listOfPeople.size();
+            return listOfCreatur.size();
         }
 
 }

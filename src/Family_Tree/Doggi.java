@@ -4,29 +4,27 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
 
-public class Human extends Alive {
-    private String name;
+public class Doggi extends Alive {
+    private String nickname, breed;
     private Gender gender;
     private LocalDate birthDate, deathDate;
-    private List<Human> children = new ArrayList<>();
-    private Human mather, father;
+    private List<Doggi> children = new ArrayList<>();
+    private Doggi mather, father;
 
-    public Human(){
-        this.name = "No data available";
+    public Doggi(){
+        this.nickname = "No data available";
     }
-    public Human(String name, LocalDate birthDate, Gender gender) {
-        this.name = name;
+    public Doggi(String name, LocalDate birthDate, Gender gender) {
+        this.nickname = name;
         this.birthDate = birthDate;
         this.gender = gender;
 
-        }
-    public Human(String name, LocalDate birthDate, LocalDate deathDate, Gender gender) {
+    }
+    public Doggi(String name, LocalDate birthDate, LocalDate deathDate, Gender gender) {
         this(name, birthDate, gender);
         this.deathDate = deathDate;
     }
-
 
     public static int calculateAge(LocalDate birthDate) {
         LocalDate currentDate = LocalDate.now();
@@ -45,8 +43,8 @@ public class Human extends Alive {
         this.deathDate = deathDate;
     }
 
-    public String getName() {
-        return name;
+    public String getNickname() {
+        return nickname;
     }
 
     public Gender getGender() {
@@ -54,28 +52,28 @@ public class Human extends Alive {
     }
 
 
-    public void setFather(Human father) {
+    public void setFather(Doggi father) {
         this.father = father;
     }
-    public Human getFather() {
+    public Doggi getFather() {
         return father;
     }
-    public void setMather(Human mather) {
+    public void setMather(Doggi mather) {
         this.mather = mather;
     }
-    public Human getMather() {
+    public Doggi getMather() {
         return mather;
     }
 
-    public void addChild(Human child) {
+    public void addChild(Doggi child) {
         children.add(child);
     }
-    public List<Human> getChildren() {
+    public List<Doggi> getChildren() {
         return children;
     }
 
     @Override
     public String toString() {
-        return "\n Name: " + name + "\n" + "Gender: " + gender + " \n Date of Birth: " + birthDate  + "\n" + " Date of Death: " + deathDate + "\n"  + "Age: " + calculateAge(birthDate) +"\n" + "Mother: " + mather +"\n" + "Father: " + father +"\n";
+        return "\n Name: " + nickname + "\n" + "Gender: " + gender + " \n Date of Birth: " + birthDate  + "\n" + " Date of Death: " + deathDate + "\n"  + "Age: " + calculateAge(birthDate) +"\n" + "Mother: " + mather +"\n" + "Father: " + father +"\n";
     }
 }
