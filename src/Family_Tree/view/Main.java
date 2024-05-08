@@ -1,4 +1,6 @@
-package Family_Tree;
+package Family_Tree.view;
+
+import Family_Tree.Model.*;
 
 import java.time.LocalDate;
 import java.util.List;

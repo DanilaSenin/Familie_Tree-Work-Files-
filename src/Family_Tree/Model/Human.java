@@ -1,10 +1,9 @@
-package Family_Tree;
+package Family_Tree.Model;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDate;
 
 public class Human extends Alive {
     private String name;

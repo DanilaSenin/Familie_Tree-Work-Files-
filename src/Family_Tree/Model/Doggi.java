@@ -1,4 +1,4 @@
-package Family_Tree;
+package Family_Tree.Model;
 
 import java.time.LocalDate;
 import java.time.Period;

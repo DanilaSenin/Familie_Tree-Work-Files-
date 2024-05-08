@@ -1,10 +1,11 @@
-package Family_Tree;
+package Family_Tree.Model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyTree <E extends Alive> {
     private String name;
+    FileManager fileManager = new FileManagerImpl();
     private List<E> listOfCreatur;
 
         public FamilyTree(String name) {
@@ -24,6 +25,11 @@ public class FamilyTree <E extends Alive> {
                 stringBuilder.append("\n");
             }
             return stringBuilder.toString();
+        }
+
+        public void AddToFile (String fileNameLibrary, String content)
+        {
+            fileManager.writeToFile(fileNameLibrary, content);
         }
 
         public Integer getCntPerson() {
