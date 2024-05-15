@@ -1,4 +1,4 @@
-package Family_Tree.Model;
+package Family_Tree.Model.Service;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

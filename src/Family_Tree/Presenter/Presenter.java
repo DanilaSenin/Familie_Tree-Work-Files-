@@ -1,6 +1,8 @@
 package Family_Tree.Presenter;
 
 
+import Family_Tree.Model.Person.Human;
+import Family_Tree.Model.Service.Gender;
 import Family_Tree.view.View;
 import Family_Tree.Model.*;
 
@@ -9,12 +11,12 @@ import java.time.LocalDate;
 public class Presenter {
     private View view;
     private FamilyTree tree;
-    private FileManagerImpl file;
+
 
     public Presenter(View view) {
         this.view = view;
         tree = new FamilyTree("Svan");
-        file = new FileManagerImpl();
+
     }
 
     public void addPerson(String name, LocalDate DateOfBirthday, Gender gender, LocalDate DateOfDeath, String Mather, String Father) {
@@ -23,10 +25,21 @@ public class Presenter {
     }
 
     public void WriteToFile(String fileName, Object AliveObject) {
-        file.writeToFile(fileName, AliveObject);
+        tree.AddToFile(fileName, AliveObject);
     }
 
-    public String getInfo() {
-        return tree.getPersonInfo();
+    public void getInfo() {
+        String info = tree.getPersonInfo();
+        view.PrintAnsver(info);
+    }
+
+    public void SortByAge() {
+        tree.SortByAge();
+        getInfo();
+    }
+
+    public void SortByName() {
+        tree.SortByName();
+        getInfo();
     }
 }

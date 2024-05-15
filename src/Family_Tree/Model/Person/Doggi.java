@@ -1,13 +1,18 @@
-package Family_Tree.Model;
+package Family_Tree.Model.Person;
+
+import Family_Tree.Model.Service.Alive;
+import Family_Tree.Model.Service.Gender;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class Doggi extends Alive {
+public class Doggi implements Comparator<Doggi>, Alive {
     private String nickname, breed;
     private Gender gender;
+    private Integer Age;
     private LocalDate birthDate, deathDate;
     private List<Doggi> children = new ArrayList<>();
     private Doggi mather, father;
@@ -75,5 +80,21 @@ public class Doggi extends Alive {
     @Override
     public String toString() {
         return "\n Name: " + nickname + "\n" + "Gender: " + gender + " \n Date of Birth: " + birthDate  + "\n" + " Date of Death: " + deathDate + "\n"  + "Age: " + calculateAge(birthDate) +"\n" + "Mother: " + mather +"\n" + "Father: " + father +"\n";
+    }
+
+    @Override
+    public int getAge() {
+        this.Age = calculateAge(birthDate);
+        return Age;
+    }
+
+    @Override
+    public String getName() {
+        return this.nickname;
+    }
+
+    @Override
+    public int compare(Doggi o, Doggi o2) {
+        return nickname.compareTo(o.nickname);
     }
 }

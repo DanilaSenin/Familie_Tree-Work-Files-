@@ -1,5 +1,11 @@
 package Family_Tree.Model;
 
+import Family_Tree.Model.Person.Comparators.ComparatorByAge;
+import Family_Tree.Model.Person.Comparators.ComparatorByName;
+import Family_Tree.Model.Service.Alive;
+import Family_Tree.Model.Service.FileManager;
+import Family_Tree.Model.Service.FileManagerImpl;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,9 +33,17 @@ public class FamilyTree <E extends Alive> {
             return stringBuilder.toString();
         }
 
-        public void AddToFile (String fileNameLibrary, String content)
+        public void AddToFile (String fileNameLibrary, Object content)
         {
             fileManager.writeToFile(fileNameLibrary, content);
+        }
+
+        public void SortByAge() {
+            listOfCreatur.sort(new ComparatorByAge<>());
+        }
+
+        public void SortByName() {
+            listOfCreatur.sort(new ComparatorByName<>());
         }
 
         public Integer getCntPerson() {

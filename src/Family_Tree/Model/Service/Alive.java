@@ -1,7 +1,8 @@
-package Family_Tree.Model;
+package Family_Tree.Model.Service;
 
 // Интерфейс для привязки живых существ к одному сообществу
 // Чтобы нельзя было передавать остальные типы
-public class Alive <E> {
-    void setFather(E father) {};
+public interface Alive<M> {
+    int getAge();
+    String getName();
 }

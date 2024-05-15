@@ -1,4 +1,4 @@
-package Family_Tree.Model;
+package Family_Tree.Model.Service;
 
 public interface FileManager <E> {
     //Метод, принимающий название файла и содержание

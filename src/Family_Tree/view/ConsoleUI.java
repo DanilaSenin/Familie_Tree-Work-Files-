@@ -1,5 +1,5 @@
 package Family_Tree.view;
-import Family_Tree.Model.Gender;
+import Family_Tree.Model.Service.Gender;
 import Family_Tree.Presenter.Presenter;
 
 import java.time.LocalDate;
@@ -19,8 +19,10 @@ public class ConsoleUI implements View{
         System.out.println("Выберите действие из спписка: ");
         while (true) {
             System.out.println("1. Добавить нового члена");
-            System.out.println("2. Занести в реестр");
-            System.out.println("3. Закончить работу");
+            System.out.println("2. Вывести древо");
+            System.out.println("3. Отсортировать по имени");
+            System.out.println("4. Отсортировать по возрасту");
+            System.out.println("5. Закончить работу");
 //Jon,1905-11-15,Man
             String line = scanner.nextLine();
         switch (line) {
@@ -52,9 +54,15 @@ public class ConsoleUI implements View{
                 presenter.addPerson(name, DB, gender, DD, Mather, Father);
                 break;
             case "2":
-                presenter.WriteToFile("example.txt", presenter.getInfo());
+                presenter.getInfo();
                 break;
             case "3":
+                presenter.SortByName();
+                break;
+            case "4":
+                presenter.SortByAge();
+                break;
+            case "5":
                 finish();
                 break;
             default:

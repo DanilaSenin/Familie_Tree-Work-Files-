@@ -1,11 +1,16 @@
-package Family_Tree.Model;
+package Family_Tree.Model.Person;
+
+import Family_Tree.Model.Service.Alive;
+import Family_Tree.Model.Service.Gender;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class Human extends Alive {
+
+public class Human implements Comparator<Human>, Alive {
     private String name, matherName, fatherName;
     private Gender gender;
     private LocalDate birthDate, deathDate;
@@ -48,7 +53,18 @@ public class Human extends Alive {
         return Period.between(birthDate, currentDate).getYears();
     }
 
+    @Override
+    public int getAge() {
+        int Age = calculateAge(this.birthDate);
+        return Age;
+    }
+
     public String setName(){return name;}
+
+    public void setFather(Human father) {
+        this.father = father;
+    }
+
     public LocalDate getBirthDate() {
         return birthDate;
     }
@@ -61,6 +77,7 @@ public class Human extends Alive {
         this.deathDate = deathDate;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -70,9 +87,7 @@ public class Human extends Alive {
     }
 
 
-    public void setFather(Human father) {
-        this.father = father;
-    }
+
     public Human getFather() {
         return father;
     }
@@ -96,5 +111,10 @@ public class Human extends Alive {
     @Override
     public String toString() {
         return "\n Name: " + name + "\n" + "Gender: " + gender + " \n Date of Birth: " + birthDate  + "\n" + " Date of Death: " + deathDate + "\n"  + "Age: " + calculateAge(birthDate) +"\n" + "Mother: " + matherName +"\n" + "Father: " + fatherName +"\n";
+    }
+
+    @Override
+    public int compare(Human o, Human o2) {
+        return name.compareTo(o.name);
     }
 }
