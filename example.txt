@@ -1,69 +1,22 @@
-Family:Svers
+Family:Svan
 
- Name: Jon
+ Name: Nill
 Gender: Man 
- Date of Birth: 1905-11-15
- Date of Death: null
-Age: 118
-Mother: null
-Father: null
+ Date of Birth: 2020-10-10
+ Date of Death: 2020-10-10
+Age: 3
+Mother: Mila
+Father: Max
 
 
- Name: Jane
+Family:Svan
+
+ Name: Mila
 Gender: Woman 
- Date of Birth: 1904-12-11
- Date of Death: 2022-12-13
-Age: 119
-Mother: null
-Father: null
-
-
- Name: Uil
-Gender: Man 
- Date of Birth: 1953-08-17
- Date of Death: null
-Age: 70
-Mother: 
- Name: Jane
-Gender: Woman 
- Date of Birth: 1904-12-11
- Date of Death: 2022-12-13
-Age: 119
-Mother: null
-Father: null
-
-Father: 
- Name: Jon
-Gender: Man 
- Date of Birth: 1905-11-15
- Date of Death: null
-Age: 118
-Mother: null
-Father: null
-
-
-
- Name: Janin
-Gender: Woman 
- Date of Birth: 1955-05-21
- Date of Death: null
-Age: 68
-Mother: 
- Name: Jane
-Gender: Woman 
- Date of Birth: 1904-12-11
- Date of Death: 2022-12-13
-Age: 119
-Mother: null
-Father: null
-
-Father: 
- Name: Jon
-Gender: Man 
- Date of Birth: 1905-11-15
- Date of Death: null
-Age: 118
-Mother: null
-Father: null
+ Date of Birth: 1999-12-01
+ Date of Death: 1999-12-01
+Age: 24
+Mother: Sara
+Father: Jek
 
 

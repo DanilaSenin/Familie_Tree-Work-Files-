@@ -4,6 +4,7 @@ import Family_Tree.Presenter.Presenter;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+import java.time.format.DateTimeParseException;
 
 public class ConsoleUI implements View{
     private Scanner scanner;
@@ -30,14 +31,31 @@ public class ConsoleUI implements View{
                 LocalDate DB = LocalDate.parse(scanner.nextLine());
                 System.out.println("Укажите пол (Man or Woman): ");
                 Gender gender = Gender.valueOf(scanner.nextLine());
-                System.out.println("Укажите дату смерти в формате gggg-mm-dd (при её отсутствии постувьте null): ");
-                LocalDate DD = LocalDate.parse(scanner.nextLine());
+                System.out.println("Укажите дату смерти в формате gggg-mm-dd (при её отсутствии поставьте Null): ");
+                String deathDateInput = scanner.nextLine();
 
-                presenter.addPerson(name, DB, gender, DD);
+                LocalDate DD = null;
+
+                if (!deathDateInput.equalsIgnoreCase("Null")) {
+                    try {
+                        DD = LocalDate.parse(deathDateInput);
+                    } catch (DateTimeParseException e) {
+                        System.out.println("Некорректный формат даты смерти. Используйте формат gggg-mm-dd или введите 'Null'.");
+                        continue; // Повторяем цикл, чтобы пользователь мог ввести корректную дату
+                    }
+                }
+
+                System.out.println("Укажите имя матери (при её отсутствии поставьте null): ");
+                String Mather = scanner.nextLine();
+                System.out.println("Укажите имя отца (при его отсутствии поставьте null): ");
+                String Father = scanner.nextLine();
+                presenter.addPerson(name, DB, gender, DD, Mather, Father);
                 break;
             case "2":
+                presenter.WriteToFile("example.txt", presenter.getInfo());
                 break;
             case "3":
+                finish();
                 break;
             default:
                 System.out.println("Неопознанный запрос");
@@ -48,5 +66,9 @@ public class ConsoleUI implements View{
     @Override
     public void PrintAnsver(String ansver) {
         System.out.println(ansver);
+    }
+    private void finish(){
+        System.out.println("До свидания!");
+        System.exit(0);
     }
 }

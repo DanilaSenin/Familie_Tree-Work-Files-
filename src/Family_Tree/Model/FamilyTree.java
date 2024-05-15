@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyTree <E extends Alive> {
-    private String name;
+    public String name;
     FileManager fileManager = new FileManagerImpl();
     private List<E> listOfCreatur;
 

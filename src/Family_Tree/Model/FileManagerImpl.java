@@ -3,14 +3,16 @@ package Family_Tree.Model;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
-public class FileManagerImpl implements FileManager {
+public class FileManagerImpl<E> implements FileManager {
+
+
     @Override
-    //Метод записи в файл
-    public void writeToFile(String fileName, String content) {
-        try (FileOutputStream fos = new FileOutputStream(fileName);
+    public void writeToFile(String fileName, Object AliveObject) {
+        try (FileOutputStream fos = new FileOutputStream(fileName, true);
              OutputStreamWriter osw = new OutputStreamWriter(fos, StandardCharsets.UTF_8);
              BufferedWriter bw = new BufferedWriter(osw)) {
-            bw.write(content);
+            bw.write(AliveObject.toString());
+            bw.newLine(); // Добавляем новую строку для разделения записей
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -32,3 +34,4 @@ public class FileManagerImpl implements FileManager {
         return content.toString().trim();
     }
 }
+
